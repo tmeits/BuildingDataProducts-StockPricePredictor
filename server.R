@@ -25,6 +25,10 @@ shinyServer(function(input, output) {
   output$plotlyMarkersLines <-renderPlotly({
     plotlyMarkersLines()
   })
+ 
+  output$plotlyNAMarkersLines <- renderPlotly({
+    plotlyNAMarkersLines()
+  })
   
   output$stockPlot <- renderPlot({
     if(is.null(prices()))
