@@ -22,7 +22,7 @@ shinyServer(function(input, output) {
     selectInput("symbols", "Stock Symbol", choices=as.vector(getSymbols()$Ticker))
   }) 
   
-  output$plotlyMarkersLines <-renderPlot({
+  output$plotlyMarkersLines <-renderPlotly({
     plotlyMarkersLines()
   })
   
