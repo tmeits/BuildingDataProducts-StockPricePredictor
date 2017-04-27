@@ -6,6 +6,7 @@
 #
 
 library(shiny)
+source('global-plot.R')
 
 shinyServer(function(input, output) {
 
