@@ -1,10 +1,11 @@
 library(shiny)
 source('global.R')
+source('global-plot.R')
 
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("Neural Network Stock Price Predictor"),
+  titlePanel("Neural Network WeatherPrediction"),
 
   # Sidebar with a slider input for number of bins
   sidebarLayout(
@@ -20,6 +21,7 @@ shinyUI(fluidPage(
 
     # Show a plot of the generated distribution
     mainPanel(
+      plotOutput("plotlyMarkersLines"),
       plotOutput("stockPlot"),
       helpText("Note: actual values in Blue; predicted values in Red", align = "center")
     )
