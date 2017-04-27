@@ -17,7 +17,7 @@ getSymbols<- function()
 
 getPrices<- function(symbol)
 {
-  #symbol<-'AAPL'
+  symbol<-'AAPL'
   today<-Sys.Date()
   fileUrl<-paste("http://ichart.yahoo.com/table.csv?s=",symbol,sep="")
   temp <- tempfile()
