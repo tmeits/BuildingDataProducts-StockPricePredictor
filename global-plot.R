@@ -18,6 +18,27 @@ plotlyMarkersLines <- function(){
   p
 }
 
+plotlyNAMarkersLines <- function(){
+  trace_0 <- rnorm(365, mean = 5, sd = 30)
+  trace_1 <- trace_0
+  trace_0[sample(length(trace_0), 33)] <- NA
+  
+  x <- c(1:365)
+
+  data <- data.frame(x, trace_0, trace_1)
+  
+  p <- plot_ly(data, x = ~x, 
+               y = ~trace_1, name = 'trace 1', type = 'scatter', mode = 'markers') %>%
+    add_trace(y = ~trace_0, name = 'trace 0', mode = 'markers') %>%
+    layout(title = "title",
+           xaxis = list(title = "Days"), 
+           yaxis = list(title = "Temp"))
+  p
+}
+
+if (FALSE){
+  plotlyNAMarkersLines()
+}
 if (FALSE){
   plotlyMarkersLines()
 }
