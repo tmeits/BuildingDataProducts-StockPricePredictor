@@ -21,7 +21,7 @@ shinyUI(fluidPage(
 
     # Show a plot of the generated distribution
     mainPanel(
-      plotOutput("plotlyMarkersLines"),
+      plotlyOutput("plotlyMarkersLines"),
       plotOutput("stockPlot"),
       helpText("Note: actual values in Blue; predicted values in Red", align = "center")
     )
