@@ -21,6 +21,10 @@ shinyServer(function(input, output) {
     selectInput("symbols", "Stock Symbol", choices=as.vector(getSymbols()$Ticker))
   }) 
   
+  output$plotlyMarkersLines <-renderPlot({
+    plotlyMarkersLines()
+  })
+  
   output$stockPlot <- renderPlot({
     if(is.null(prices()))
       return()
